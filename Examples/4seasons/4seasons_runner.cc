@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
     }
 
     bool useImu = true;
-    bool useGui = true;
+    bool useGui = false;
     bool useRectImages = true;
 
     std::string dirDataset(argv[3]);
@@ -184,18 +184,7 @@ int main(int argc, char **argv) {
     std::stringstream ss;
     ss << now;
 
-//    if (bFileName)
-//    {
-//        const string kf_file =  "kf_" + string(argv[argc-1]) + ".txt";
-//        const string f_file =  "f_" + string(argv[argc-1]) + ".txt";
-//        SLAM.SaveTrajectoryEuRoC(f_file);
-//        SLAM.SaveKeyFrameTrajectoryEuRoC(kf_file);
-//    }
-//    else
-//    {
-        SLAM.SaveTrajectoryEuRoC("CameraTrajectory.txt");
-        SLAM.SaveKeyFrameTrajectoryEuRoC("KeyFrameTrajectory.txt");
-//    }
+    SLAM.SaveTrajectoryArtisense("CameraTrajectory.txt");
 
     sort(vTimesTrack.begin(),vTimesTrack.end());
     float totaltime = 0;

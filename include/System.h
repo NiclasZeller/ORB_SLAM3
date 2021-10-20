@@ -147,6 +147,8 @@ public:
     // See format details at: http://vision.in.tum.de/data/datasets/rgbd-dataset
     void SaveKeyFrameTrajectoryTUM(const string &filename);
 
+    void SaveTrajectoryArtisense(const string &filename);
+
     void SaveTrajectoryEuRoC(const string &filename);
     void SaveKeyFrameTrajectoryEuRoC(const string &filename);
 
