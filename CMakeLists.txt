@@ -33,13 +33,13 @@ endif()
 
 LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
 
-find_package(OpenCV 4.0)
-if(NOT OpenCV_FOUND)
+#find_package(OpenCV 4.0)
+#if(NOT OpenCV_FOUND)
   find_package(OpenCV 3.0)
   if(NOT OpenCV_FOUND)
     message(FATAL_ERROR "OpenCV > 3.0 not found.")
   endif()
-endif()
+#endif()
 
 MESSAGE("OPENCV VERSION:")
 MESSAGE(${OpenCV_VERSION})
@@ -193,4 +193,10 @@ target_link_libraries(stereo_inertial_euroc ${PROJECT_NAME})
 add_executable(stereo_inertial_tum_vi
 Examples/Stereo-Inertial/stereo_inertial_tum_vi.cc)
 target_link_libraries(stereo_inertial_tum_vi ${PROJECT_NAME})
+
+# Stereo-Inertial examples
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Examples/4seasons)
+add_executable(4seasons_runner
+Examples/4seasons/4seasons_runner.cc)
+target_link_libraries(4seasons_runner ${PROJECT_NAME})
 

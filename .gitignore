@@ -24,6 +24,7 @@ Examples/ROS/ORB_SLAM3/MonoAR
 Examples/ROS/ORB_SLAM3/RGBD
 Examples/ROS/ORB_SLAM3/Stereo
 Examples/ROS/ORB_SLAM3/Stereo_Inertial
+Examples/4seasons/4seasons_runner
 
 Examples/ROS/ORB_SLAM3/CMakeLists.txt.user
 Examples/ROS/ORB_SLAM3/build/
@@ -47,3 +48,4 @@ cmake-build-debug/
 
 *.pyc
 *.osa
+.idea*
