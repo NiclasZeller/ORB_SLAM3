@@ -21,13 +21,23 @@ double ttrack_tot = 0;
 int main(int argc, char **argv) {
 
     if(argc < 4) {
-        cerr << endl << "Usage: ./stereo_inertial_tum_vi path_to_vocabulary path_to_settings path_to_dataset_folder\n";
+        cerr << endl << "Usage: ./4seasons_runner path_to_vocabulary path_to_settings path_to_dataset_folder with_imu(optional) with_gui(optional)\n";
         return 1;
     }
 
-    bool useImu = true;
+    bool useImu = false;
     bool useGui = false;
     bool useRectImages = true;
+    for(int i=4; i<argc; i++){
+        string arg_in(argv[i]);
+        if(arg_in == "with_imu") {
+            useImu = true;
+        } else if(arg_in == "with_gui") {
+            useGui = true;
+        } else {
+            std::cout << "invalid input argument: " << arg_in << "\n";
+        }
+    }
 
     std::string dirDataset(argv[3]);
 
